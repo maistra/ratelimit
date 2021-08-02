@@ -32,6 +32,7 @@ func TestServerStringsFromSrvWhenSrvIsNotWellFormed(t *testing.T) {
 }
 
 func TestServerStringsFromSevWhenSrvIsWellFormedButNotLookupable(t *testing.T) {
+	t.Skip("https://github.com/envoyproxy/ratelimit/issues/277")
 	_, err := srv.ServerStringsFromSrv("_something._tcp.example.invalid")
 	var e *net.DNSError
 	if errors.As(err, &e) {
@@ -46,6 +47,7 @@ func TestServerStringsFromSevWhenSrvIsWellFormedButNotLookupable(t *testing.T) {
 }
 
 func TestServerStrings(t *testing.T) {
+	t.Skip("https://github.com/envoyproxy/ratelimit/issues/277")
 	// it seems reasonable to think _xmpp-server._tcp.gmail.com will be available for a long time!
 	servers, err := srv.ServerStringsFromSrv("_xmpp-server._tcp.gmail.com.")
 	assert.True(t, len(servers) > 0)
