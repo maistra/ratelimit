@@ -113,3 +113,11 @@ docker_image: docker_tests
 .PHONY: docker_push
 docker_push: docker_image
 	docker push $(IMAGE):$(VERSION)
+
+.PHONY: docker_image_without_tests
+docker_image_without_tests:
+	docker build . -t $(IMAGE):$(VERSION)
+
+.PHONY: docker_push_without_tests
+docker_push_without_tests: docker_image_without_tests
+	docker push $(IMAGE):$(VERSION)
