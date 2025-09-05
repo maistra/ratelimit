@@ -634,3 +634,7 @@ to all ratelimiter instances to ensure that a particular cache key is always has
   We have the IRC/XMPP gateways enabled if you prefer either of those. Once an account is created,
   connection instructions for IRC/XMPP can be found [here](https://envoyproxy.slack.com/account/gateways).
   The `#ratelimit-users` channel is used for discussions about the ratelimit service.
+
+<!--
+Current full version: 2.6.10
+-->
